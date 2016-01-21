@@ -1,21 +1,20 @@
-﻿function removeItem(parameters) {
-	
-	var result = arr.filter(function (arr) {
-		
-	    if (arr === parameters) {
-	        return false;
+﻿Array.prototype.removeItem = function(item) {
+	var obj = this;
+    var index = 0;
+    var remuve = obj.filter(function() {
+		if (obj[index] === item) {
+		    index++;
+            return false;
 		} else {
-	        return true;
-	    }
+		    index++;
+            return true;
+        }
 	});
-    return result;
-
-}
-
+    console.log(remuve);
+};
 
 var arr = [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, '1'];
-console.log(removeItem(1));
-
+arr.removeItem(1);
 
 var arr = ['hi', 'bye', 'hello'];
-console.log(removeItem('bye'));
+arr.removeItem('bye');
