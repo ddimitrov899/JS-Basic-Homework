@@ -1,0 +1,10 @@
+{
+  "name": "03MagicGrid",
+  "version": "0.0.0",
+  "description": "03MagicGrid",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}
