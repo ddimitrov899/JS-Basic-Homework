@@ -1,0 +1,10 @@
+{
+  "name": "02FleeRacing",
+  "version": "0.0.0",
+  "description": "02FleeRacing",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

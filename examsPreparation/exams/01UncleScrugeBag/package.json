@@ -1,0 +1,10 @@
+{
+  "name": "01UncleScrugeBag",
+  "version": "0.0.0",
+  "description": "01UncleScrugeBag",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

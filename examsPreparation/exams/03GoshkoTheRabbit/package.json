@@ -1,0 +1,10 @@
+{
+  "name": "03GoshkoTheRabbit",
+  "version": "0.0.0",
+  "description": "03GoshkoTheRabbit",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

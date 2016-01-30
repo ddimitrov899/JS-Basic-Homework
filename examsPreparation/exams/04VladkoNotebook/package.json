@@ -1,0 +1,10 @@
+{
+  "name": "04VladkoNotebook",
+  "version": "0.0.0",
+  "description": "04VladkoNotebook",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

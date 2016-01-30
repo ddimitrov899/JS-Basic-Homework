@@ -1,0 +1,10 @@
+{
+  "name": "01KitodarMiner",
+  "version": "0.0.0",
+  "description": "01KitodarMiner",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

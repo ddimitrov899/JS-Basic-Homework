@@ -1,0 +1,10 @@
+{
+  "name": "04RollandGarros",
+  "version": "0.0.0",
+  "description": "04RollandGarros",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

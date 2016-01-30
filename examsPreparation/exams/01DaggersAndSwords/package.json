@@ -1,0 +1,10 @@
+{
+  "name": "01DaggersAndSwords",
+  "version": "0.0.0",
+  "description": "01DaggersAndSwords",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

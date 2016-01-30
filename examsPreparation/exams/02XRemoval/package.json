@@ -1,0 +1,10 @@
+{
+  "name": "02XRemoval",
+  "version": "0.0.0",
+  "description": "02XRemoval",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}
