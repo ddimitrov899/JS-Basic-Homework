@@ -1,0 +1,10 @@
+{
+  "name": "04MinkaTheJavaScriptGoddess",
+  "version": "0.0.0",
+  "description": "04MinkaTheJavaScriptGoddess",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}

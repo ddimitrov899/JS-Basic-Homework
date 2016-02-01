@@ -1,0 +1,10 @@
+{
+  "name": "03ftUniForum",
+  "version": "0.0.0",
+  "description": "03ftUniForum",
+  "main": "app.js",
+  "author": {
+    "name": "Mitko",
+    "email": ""
+  }
+}
