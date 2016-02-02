@@ -1,71 +1,81 @@
 ﻿function solve(arr) {
-	var input,
-		result = {};
-	for (var index in arr) {
-		input = arr[index].split(' & ');
-		var name = input[0];
-		var type = input[1];
-		var taskNumber = 'Task ' + input[2];
-		var score = Number(input[3]);
-		var lineCode = Number(input[4]);
-		var goddnesTaskNumber = null;
-		for (var i in result) {
-			var current = result[i];
-			if (i === taskNumber) {
-				goddnesTaskNumber = current;
-				
-				result[i].averig += score;
-				result[i].line += lineCode;
-			}
-		}
-		if (goddnesTaskNumber === null) {
-			goddnesTaskNumber = goddnesObj();
-			result[taskNumber] = goddnesTaskNumber;
-			result[taskNumber].task[name] = name;
-			result[taskNumber].averig = score;
-			result[taskNumber].line = lineCode;
-		}
-		if (!result[taskNumber].task[name]) {
-			var task = 
- {
-				name: name,
-				type: type
-			};
-			result[taskNumber].task.push(task);
+    var input = [],
+        goddessObj = {},
+        name,
+        type,
+        task,
+        averageNumber,
+        linesNumber,
+        isExist,
+        index,
+        i;
+    for (index in arr) {
+        input[index] = arr[index].split(' & ');
+    }
+    for (i in input) {
+        name = input[i][0];
+        type = input[i][1];
+        task = 'Task ' + input[i][2];
+        averageNumber = Number(input[i][3]);
+        linesNumber = Number(input[i][4]);
+        isExist = false;
+        for (index in goddessObj) {
+            if (index === task) {
+                goddessObj[index].tasks.push({name: name, type: type});
+                goddessObj[index].average += averageNumber;
+                goddessObj[index].lines += linesNumber;
+                isExist = true;
+            }
+        }
+        if (!isExist) {
+            goddessObj[task] = taskGoddess();
+            goddessObj[task].tasks.push({name: name, type:type});
+            goddessObj[task].average = averageNumber;
+            goddessObj[task].lines = linesNumber;
+        }
 
-		}
-	}
-	for (var j in result) {
-		result[j].averig = result[j].averig / result[j].task.length;
-	}
-    var sort = Object.valueOf(result.averig).sort();
-    
-	
-	console.log(sort);
-	console.log(JSON.stringify(result));
-	function goddnesObj() {
-		return {
-			task: [],
-			averig: 0,
-			line: 0
-		};
-	}
-	
+    }
+    for (index in goddessObj) {
+        goddessObj[index].average = goddessObj[index].average / goddessObj[index].tasks.length;
+        goddessObj[index].average = Number(goddessObj[index].average.toFixed(2).toString());
+        goddessObj[index].tasks.sort(function(a, b){
+           return a.name.localeCompare(b.name);
+        });
+    }
+
+    var keySorted = Object.keys(goddessObj).sort(function (a, b) {
+        if (goddessObj[b].average === goddessObj[a].average) {
+            return goddessObj[a].lines - goddessObj[b].lines;
+        }
+
+        return goddessObj[b].average - goddessObj[a].average;
+    });
+    var objSort = {};
+    keySorted.forEach(function (a) {
+        objSort[a] = goddessObj[a];
+    });
+
+    console.log(JSON.stringify(objSort));
+
+    function taskGoddess() {
+        return {
+            tasks: [],
+            average: 0,
+            lines: 0
+        };
+    }
 }
 
-var arr = [
-	'Array Matcher & strings & 4 & 100 & 38',
-	'Magic Wand & draw & 3 & 100 & 15',
-	'Dream Item & loops & 2 & 88 & 80',
-	'Knight Path & bits & 5 & 100 & 65',
-	'Basket Battle & conditionals & 2 & 100 & 120',
-	'Torrent Pirate & calculations & 1 & 100 & 20',
-	'Encrypted Matrix & nested loops & 4 & 90 & 52',
-	'Game of bits & bits & 5 & 100 & 18',
-	'Fit box in box & conditionals & 1 & 100 & 95',
-	'Disk & draw & 3 & 90 & 15',
-	'Poker Straight & nested loops & 4 & 40 & 57',
-	'Friend Bits & bits & 5 & 100 & 81'
-];
-
+arr = ['Array Matcher & strings & 4 & 100 & 38',
+    'Magic Wand & draw & 3 & 100 & 15',
+    'Dream Item & loops & 2 & 88 & 80',
+    'Knight Path & bits & 5 & 100 & 65',
+    'Basket Battle & conditionals & 2 & 100 & 120',
+    'Torrent Pirate & calculations & 1 & 100 & 20',
+    'Encrypted Matrix & nested loops & 4 & 90 & 52',
+    'Game of bits & bits & 5 & 100 & 18',
+    'Fit box in box & conditionals & 1 & 100 & 95',
+    'Disk & draw & 3 & 90 & 15',
+    'Poker Straight & nested loops & 4 & 40 & 57',
+    'Friend Bits & bits & 5 & 100 & 81'];
 solve(arr);

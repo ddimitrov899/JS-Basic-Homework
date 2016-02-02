@@ -51,16 +51,13 @@
 			continue;
 		}
 		match = regex.exec(input[index]);
-		while (match !== null) {
-			
-			name = patern.exec(input[index]);
-			if (match !== null) {
-				input[index] = input[index].replace(match[1], function () {
-					return '<a href="/users/profile/show/' + name[1] + '">' + name[1] + '</a>';
-				});
+		
+		name = patern.exec(input[index]);
+		if (match !== null) {
+			input[index] = input[index].replace(match[1], function () {
+				return '<a href="/users/profile/show/' + name[1] + '">' + name[1] + '</a>';
+			});
 				
-			}
-			match = regex.exec(input[index]);
 		}
 		
 	}
